@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border: 0;
 }
@@ -28,11 +28,14 @@
   text-decoration: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  align-items: center;
   color: white;
+
 }
 
-
+header {
+  padding-top: 25px;
+}
 
 .Menu input {
   border-radius: 30px;
@@ -44,6 +47,7 @@
   text-decoration: none;
   font-family: sans-serif;
   color: white;
+  padding-left: 50px;
 }
 
 body {
