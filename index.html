@@ -14,8 +14,9 @@
   <style>
     * {
       margin: 0 auto;
-      padding: 0;
-      border: 0;
+      padding: 0px;
+      border: 0px;
+      /* widthpx; */
     }
 
     html {
@@ -47,11 +48,14 @@
       }
     }
 
+    header input::hover {}
 
     header input {
       background-color: hsla(0, 0%, 100%, .25);
+
       max-width: 120px;
       max-height: 25px;
+
 
     }
 
@@ -193,20 +197,42 @@
     }
 
     .Android {
-      background-image: url(Images/);
+      background-image: url(Images/icons8-android-os.svg);
+      background-color: ;
     }
 
-    .camp {
-      border: px;
+    .Films a {
+      border-radius: 10px;
+      padding: 4px;
+      left: 100px;
     }
+
+    .Films {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 60px;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 400px;
+    }
+
+    .Films a:hover {
+      border: 3px solid greenyellow;
+    }
+
+    #Android {}
 
     footer {
+      margin: auto;
       position: absolute;
+      top: 500px;
       bottom: 0;
       width: 100%;
       height: 60px;
       text-align: center;
       line-height: 100px;
+
     }
 
     footer h4 {
@@ -260,11 +286,34 @@
   </section>
 
   <footer>
-    <h4>The social network for film lovers. &nbsp;&nbsp;&nbsp; Also available on
+    <h4>The social network for film lovers. &nbsp;&nbsp;&nbsp; Also available on <i id="Android"
+        class="fa-brands fa-apple"></i>&nbsp;&nbsp;&nbsp;<i id="IOS" class="fa-brands fa-android"></i>
     </h4>
-    <span class="Android">Android</span>
+
 
   </footer>
+
+  <div class="Films">
+    <a href=""><img
+        src="https://a.ltrbxd.com/resized/film-poster/6/8/6/3/8/9/686389-prey-0-150-0-225-crop.jpg?v=f9f0c6bb6e"
+        alt=""></a>
+    <a href=""><img
+        src="https://a.ltrbxd.com/resized/film-poster/6/2/2/6/5/4/622654-thirteen-lives-0-150-0-225-crop.jpg?v=df719c3b6c"
+        alt=""></a>
+    <a href=""><img
+        src="https://a.ltrbxd.com/resized/film-poster/7/7/7/1/8/5/777185-emily-the-criminal-0-150-0-225-crop.jpg?v=6c3839f6e5"
+        alt=""></a>
+    <a href=""><img
+        src="https://a.ltrbxd.com/resized/film-poster/5/1/1/0/0/0/511000-funny-pages-0-150-0-225-crop.jpg?v=7d316cac95"
+        alt=""></a>
+    <a href=""><img
+        src="https://a.ltrbxd.com/resized/sm/upload/3w/cr/of/eo/girl%20picture-0-150-0-225-crop.jpg?v=2154c39c9d"
+        alt=""></a>
+    <a href=""><img
+        src="https://a.ltrbxd.com/resized/film-poster/6/8/2/5/4/7/682547-nope-0-150-0-225-crop.jpg?v=2df43b63a2"
+        alt=""></a>
+  </div>
+
 
 </body>
 
