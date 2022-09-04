@@ -49,14 +49,7 @@
     }
 
 
-    header input {
-      background-color: hsla(0, 0%, 100%, .25);
 
-      max-width: 120px;
-      max-height: 25px;
-
-
-    }
 
 
     header {
@@ -121,10 +114,15 @@
       }
     }
 
+    #InputNav {
+      margin: 7px;
+    }
+
     .Menu input {
+      background-color: hsla(0, 0%, 100%, .25);
       border-radius: 30px;
-      height: 40px;
-      width: 110px;
+      height: 25px;
+      width: 120px;
     }
 
     header nav {
@@ -141,10 +139,10 @@
     }
 
     header nav a {
-      color: rgba(211, 211, 211, 1.0);
+      color: #D8E0E8;
       margin: auto 5px auto 10px;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: bold;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
@@ -271,7 +269,7 @@
         <li><a href="#">LISTS</a></li>
         <li><a href="#">MEMBERS</a></li>
         <li><a href="#">JOURNAL</a></li>
-        <li><input class="camp" type="text"><i class="fa-solid fa-magnifying-glass"></i></li>
+        <li id="InputNav"><input class="camp" type="text"><i id="lupa" class="fa-solid fa-magnifying-glass"></i></li>
 
       </ul>
     </nav>
