@@ -43,12 +43,12 @@ header {
 
 @media(min-width: 320px) and (max-width: 450px) {
   header {
-    width: 100%;
+    width: 90%;
     padding: 10px;
-    align-items: center;
+    text-align: left;
     z-index: 1;
     padding: 0;
-    padding-left: 15px;
+    margin-left: 10px;
     min-width: 320px;
   }
 }
@@ -210,7 +210,7 @@ div {
   div {
     margin: 0;
     padding: 0;
-    padding-top: 20%;
+    padding-top: 36%;
     padding-bottom: 26px;
     text-align: center;
   }
@@ -257,9 +257,7 @@ section {
     padding: 0;
     padding-top: 3px;
     text-align: center;
-    line-height: 1;
     z-index: 1;
-    margin-left: 150px;
   }
 }
 
@@ -297,12 +295,12 @@ section {
     margin: 0;
     padding: 0;
     padding: 4px;
-    left: 100px;
+
   }
 }
 
 .Films {
-  padding-top: 120px;
+  padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
   margin-left: 60px;
@@ -312,16 +310,9 @@ section {
 }
 @media(min-width: 320px) and (max-width: 450px) {
   .Films {
-    margin-left: 0;
-    width: auto;
-    height: 190px;
+    margin: 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    bottom: 30%;
+    text-align: center;
   }
 }
 
@@ -359,18 +350,19 @@ footer {
     padding: 0;
     text-align: center;
     top: 0;
-    margin-top: 210px;
+    margin-top: 300px;
   }
 }
 
 footer h4 {
-  font-size: 4.0rem;
+  font-size: 2.0rem;
   color: rgba(211, 211, 211, 1.0);
 }
 @media(min-width: 320px) and (max-width: 450px) {
   footer h4 {
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     color: rgba(211, 211, 211, 1.0);
+
   }
 }
 
