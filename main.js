@@ -1,0 +1,1 @@
+//document.querySelector('.Logar').addEventListener(alert('Teste'))

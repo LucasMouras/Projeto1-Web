@@ -10,13 +10,12 @@
   <script src="https://kit.fontawesome.com/606348aac3.js" crossorigin="anonymous"></script>
   <title>Letterboxd</title>
   <link rel="stylesheet" href="Style/Estilos.css">
-
+  <script type="text/javascript" src="main.js"></script>
 
 
 </head>
 
 <body>
-
 
 
 
@@ -29,7 +28,7 @@
           <img class="Logo" src="Images/Logo (1).png" alt="Logo LetterB">
         </figure>
         <h1 style="float: left;"><a class="TextoLogo" href="index.html">Letterboxd</a></h1>
-        <li><a href="#">SIGN IN</a>
+        <li><a href="#" class="Logar">SIGN IN</a>
         <li><a href="#">CREATE ACCOUNT</a></li>
         <li><a href="#">FILMS</a></li>
         <li><a href="#">LISTS</a></li>
@@ -37,8 +36,14 @@
         <li><a href="#">JOURNAL</a></li>
         <li id="InputNav"><input class="camp" type="text"><i id="lupa" class="fa-solid fa-magnifying-glass"></i></li>
 
+        <IFRame src="Login.html" class="Formulario"></IFRame>
+
       </ul>
     </nav>
+
+
+
+
 
   </header>
 
@@ -54,7 +59,7 @@
   <section>
 
     <a href="#" class="botao">GET STARTED - IT'S FREE</a>
-  
+
   </section>
 
   <footer>
@@ -86,9 +91,13 @@
 
   </footer>
 
-
-
-
+  <script>
+    let Logar = document.querySelector('.Logar')
+    let formulario = document.querySelector('.Formulario')
+    Logar.addEventListener('click', () => {
+      formulario.className = 'FormularioShow'
+    })
+  </script>
 </body>
 
 </html>

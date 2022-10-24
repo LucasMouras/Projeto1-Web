@@ -61,6 +61,7 @@ header {
   margin: 0;
   min-width: 30px;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   .Logo {
     width: 12px;
@@ -80,6 +81,7 @@ header {
   margin-right: 50px;
   min-width: 30px;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   .TextoLogo {
     font-family: sans-serif;
@@ -94,8 +96,9 @@ header {
 
 #InputNav {
   margin: 6px;
-  display: flex;
+  display: none;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   #InputNav {
     margin-top: 11px;
@@ -110,6 +113,7 @@ header {
   margin-left: 105px;
   margin-top: 8px;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   #lupa {
     position: absolute;
@@ -127,6 +131,7 @@ header {
   height: 25px;
   width: 120px;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   .Menu input {
     background-color: hsla(0, 0%, 100%, .25);
@@ -187,6 +192,7 @@ header nav li {
   margin-left: 5px;
   padding-top: 6px;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   header nav li {
     float: left;
@@ -206,6 +212,7 @@ div {
   padding-bottom: 26px;
 
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   div {
     margin: 0;
@@ -221,6 +228,7 @@ div h3 {
   color: #FFFFFF;
   font-size: 4.0rem;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   div h3 {
     text-align: center;
@@ -248,6 +256,7 @@ section {
   z-index: 1;
 
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   section {
     height: 15px;
@@ -268,13 +277,14 @@ section {
   z-index: 1;
 
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   .botao {
     color: white;
     text-decoration: none;
     font-size: 0.8rem;
     z-index: 1;
-  
+
   }
 }
 
@@ -289,6 +299,7 @@ section {
   padding: 4px;
   left: 100px;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   .Films a {
     border-radius: 10px;
@@ -308,6 +319,7 @@ section {
   align-items: center;
   position: absolute;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   .Films {
     margin: 0;
@@ -317,7 +329,7 @@ section {
 }
 
 @media(min-width: 320px) and (max-width: 450px) {
-  .carr{
+  .carr {
     width: 60px;
     height: 85px;
   }
@@ -326,6 +338,7 @@ section {
 .Films a:hover {
   border: 3px solid greenyellow;
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   .Films a:hover {
     border: 3px solid greenyellow;
@@ -344,6 +357,7 @@ footer {
   line-height: 100px;
 
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   footer {
     margin: 0;
@@ -358,6 +372,7 @@ footer h4 {
   font-size: 2.0rem;
   color: rgba(211, 211, 211, 1.0);
 }
+
 @media(min-width: 320px) and (max-width: 450px) {
   footer h4 {
     font-size: 1.4rem;
@@ -374,4 +389,17 @@ span {
   right: 0;
   margin-right: 490px;
 
+}
+
+.Formulario {
+  display: none;
+}
+
+.FormularioShow {
+  margin: auto;
+  right: inherit;
+  padding-right: 200px;
+  width: 200px;
+  position: relative;
+  display: block;
 }
