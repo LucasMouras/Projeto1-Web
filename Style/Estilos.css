@@ -96,7 +96,6 @@ header {
 
 #InputNav {
   margin: 6px;
-  display: none;
 }
 
 @media(min-width: 320px) and (max-width: 450px) {
@@ -402,4 +401,10 @@ span {
   width: 200px;
   position: relative;
   display: block;
+}
+
+#PesquisaDDD {
+  border-radius: 10px;
+  width: 25px;
+  height: 10px;
 }
