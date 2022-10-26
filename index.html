@@ -28,21 +28,14 @@
           <img class="Logo" src="Images/Logo (1).png" alt="Logo LetterB">
         </figure>
         <h1 style="float: left;"><a class="TextoLogo" href="index.html">Letterboxd</a></h1>
-        <li><a href="#" class="Logar">SIGN IN</a>
+        <li><a href="#login" class="Logar">SIGN IN</a>
         <li><a href="#">CREATE ACCOUNT</a></li>
         <li><a href="#">FILMS</a></li>
         <li><a href="#">LISTS</a></li>
         <li><a href="#">MEMBERS</a></li>
         <li><a href="#">JOURNAL</a></li>
-        <li id="InputNav"><input class="camp" type="text">
-
-          <IFRame src="Login.html" class="Formulario"></IFRame>
-
       </ul>
     </nav>
-
-
-
 
 
   </header>
@@ -66,36 +59,73 @@
     <h4>The social network for film lovers. &nbsp;&nbsp;&nbsp; Also available on <i id="Android"
         class="fa-brands fa-apple"></i>&nbsp;&nbsp;&nbsp;<i id="IOS" class="fa-brands fa-android"></i>
       <h4>
-
-        <div class="Films">
-          <a href=""><img class="carr"
-              src="https://a.ltrbxd.com/resized/film-poster/6/8/6/3/8/9/686389-prey-0-150-0-225-crop.jpg?v=f9f0c6bb6e"
-              alt=""></a>
-          <a href=""><img class="carr"
-              src="https://a.ltrbxd.com/resized/film-poster/6/2/2/6/5/4/622654-thirteen-lives-0-150-0-225-crop.jpg?v=df719c3b6c"
-              alt=""></a>
-          <a href=""><img class="carr"
-              src="https://a.ltrbxd.com/resized/film-poster/7/7/7/1/8/5/777185-emily-the-criminal-0-150-0-225-crop.jpg?v=6c3839f6e5"
-              alt=""></a>
-          <a href=""><img class="carr"
-              src="https://a.ltrbxd.com/resized/film-poster/5/1/1/0/0/0/511000-funny-pages-0-150-0-225-crop.jpg?v=7d316cac95"
-              alt=""></a>
-          <a href=""><img class="carr"
-              src="https://a.ltrbxd.com/resized/sm/upload/3w/cr/of/eo/girl%20picture-0-150-0-225-crop.jpg?v=2154c39c9d"
-              alt=""></a>
-          <a href=""><img class="carr"
-              src="https://a.ltrbxd.com/resized/film-poster/6/8/2/5/4/7/682547-nope-0-150-0-225-crop.jpg?v=2df43b63a2"
-              alt=""></a>
-        </div>
-
-
   </footer>
 
-  <script>
+  <div class="Films">
+    <a href=""><img class="carr"
+        src="https://a.ltrbxd.com/resized/film-poster/6/8/6/3/8/9/686389-prey-0-150-0-225-crop.jpg?v=f9f0c6bb6e"
+        alt=""></a>
+    <a href=""><img class="carr"
+        src="https://a.ltrbxd.com/resized/film-poster/6/2/2/6/5/4/622654-thirteen-lives-0-150-0-225-crop.jpg?v=df719c3b6c"
+        alt=""></a>
+    <a href=""><img class="carr"
+        src="https://a.ltrbxd.com/resized/film-poster/7/7/7/1/8/5/777185-emily-the-criminal-0-150-0-225-crop.jpg?v=6c3839f6e5"
+        alt=""></a>
+    <a href=""><img class="carr"
+        src="https://a.ltrbxd.com/resized/film-poster/5/1/1/0/0/0/511000-funny-pages-0-150-0-225-crop.jpg?v=7d316cac95"
+        alt=""></a>
+    <a href=""><img class="carr"
+        src="https://a.ltrbxd.com/resized/sm/upload/3w/cr/of/eo/girl%20picture-0-150-0-225-crop.jpg?v=2154c39c9d"
+        alt=""></a>
+    <a href=""><img class="carr"
+        src="https://a.ltrbxd.com/resized/film-poster/6/8/2/5/4/7/682547-nope-0-150-0-225-crop.jpg?v=2df43b63a2"
+        alt=""></a>
+  </div>
 
+  <div id="login">
+    <h1>Login</h1>
+    <input type="text" placeholder="usuario">
+    <br>
+    <input type="password" placeholder="senha">
+    <br>
+    <button id="logar">Enviar</button>
+  </div>
+
+  <div id="pesquisaDDD">
+    <input type="text" class="ddd">
+    <button class="BuscarDDD">Buscar</button>>
+  </div>
+
+  <ul class="lista">
+
+  </ul>
+
+  <script type="text/javascript" charset="UTF-8">
+    document.querySelector(".BuscarDDD").addEventListener("click", () => {
+
+      var lista = document.querySelector('.lista')
+      lista.innerHTML = ""
+      request.open("GET", `https://brasilapi.com.br/api/ddd/v1/${document.querySelector('.ddd').value}`, true);
+      request.onreadystatechange = () => {
+        if (request.readyState === 4 && request.status === 200) {
+          var cidadesOBJ = JSON.parse(request.responseText)
+          cidadesOBJ = cidadesOBJ.cities
+          var cidades = Object.values(cidadesOBJ)
+
+          for (i in cidades) {
+            var li = document.createElement('li')
+            li.innerHTML = cidades[i]
+            lista.appendChild(li)
+          }
+
+        }
+      }
+      request.send()
+    })
   </script>
-  <button>Teste</button>
+
 </body>
+
 
 
 </html>
