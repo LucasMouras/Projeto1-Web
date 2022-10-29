@@ -3,47 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
 
 <body>
 
-  <fieldset>
-    <legend>Informe um DDD</legend>
-    <input type="text" class="ddd">
-    <button class="BuscarDDD">Buscar</button>
-  </fieldset>
-
-  <ul class="lista">
-
-  </ul>
-
-
-  <script type="text/javascript" charset="UTF-8">
-
-    document.querySelector(".BuscarDDD").addEventListener("click", () => {
-
-      var lista = document.querySelector('.lista')
-      lista.innerHTML = ""
-      request.open("GET", `https://brasilapi.com.br/api/ddd/v1/${document.querySelector('.ddd').value}`, true);
-      request.onreadystatechange = () => {
-        if (request.readyState === 4 && request.status === 200) {
-          var cidadesOBJ = JSON.parse(request.responseText)
-          cidadesOBJ = cidadesOBJ.cities
-          var cidades = Object.values(cidadesOBJ)
-
-          for (i in cidades) {
-            var li = document.createElement('li')
-            li.innerHTML = cidades[i]
-            lista.appendChild(li)
-          }
-
-        }
-      }
-      request.send()
-    })
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://reqres.in/api/products/3", true);
+    xhr.onload = function () {
+      console.log(xhr.responseText);
+    };
+    xhr.send();
   </script>
 </body>
 

@@ -402,24 +402,46 @@ span {
   display: block;
 }
 
-#login {
-
-  font-size: medium;
-  align-items: center;
+.login {
+  background-color: #2F3337;
 }
 
-#login button {
+.login button {
+
   width: 158px;
   border-radius: 10px;
 }
 
-#login input {
+.login input {
   border-radius: 10px;
   width: 200px;
   height: 30px;
 }
 
-#login h1 {
+.login h1 {
   color: #f9f9fa;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+  padding-left: 400px;
+
+}
+
+
+.loginOff {
+  display: none;
+}
+
+.lista {
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.pesquisaDDD {
+  display: none;
+}
+
+.pesquisaDDD.show {
+  display: block;
+  background-color: green;
 }
