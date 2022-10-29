@@ -28,7 +28,7 @@
           <img class="Logo" src="Images/Logo (1).png" alt="Logo LetterB">
         </figure>
         <h1 style="float: left;"><a class="TextoLogo" href="index.html">Letterboxd</a></h1>
-        <li><a href="#login" class="Logar">SIGN IN</a>
+        <li><a href="#paglog" class="Logar">SIGN IN</a>
         <li><a href="#">CREATE ACCOUNT</a></li>
         <li><a href="#">FILMS</a></li>
         <li><a href="#">LISTS</a></li>
@@ -82,8 +82,8 @@
         alt=""></a>
   </div>
 
-  <div id="login">
-    <h1>Login</h1>
+  <div class="login">
+    <h1 id="paglog">Login</h1>
     <br>
     <input class="email" type="text" placeholder="usuario">
     <br>
@@ -110,7 +110,7 @@
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "https://reqres.in/api/users", true);
       xhr.onload = function () {
-        var login = document.querySelector('#login')
+        var login = document.querySelector('.login')
         var ddd = document.querySelector('.pesquisaDDD')
         var emails = []
         var email = document.querySelector('.email')
@@ -120,17 +120,24 @@
         for (i = 0; i <= users.length - 1; i++) {
           emails.push(users[i].email)
         }
+
+        var cadastrado = false
+
         for (i in emails) {
-          if (email.value === emails[i]) {
+          if (emails[i] === email.value) {
+            cadastrado = true
             login.className = 'loginOff'
             ddd.className = 'pesquisaDDD show'
-            localStorage.setItem('Usuario', email)
-          } else {
-            mensagem = document.createElement('h2')
-            mensagem.innerHTML = 'Usuario nao encontrado'
-            login.appendChild(mensagem)
+            break
           }
         }
+
+        if (cadastrado === false) {
+          var mensagem = document.createElement('h2')
+          mensagem.innerHTML = 'Usuário não encontrado'
+          login.appendChild(mensagem)
+        }
+
 
       }
       xhr.send();

@@ -404,6 +404,8 @@ span {
 
 .login {
   background-color: #2F3337;
+  padding-left: 40%;
+  padding-top: 20px;
 }
 
 .login button {
@@ -414,16 +416,22 @@ span {
 
 .login input {
   border-radius: 10px;
-  width: 200px;
-  height: 30px;
+  width: 400px;
+  height: 50px;
 }
+
 
 .login h1 {
   color: #f9f9fa;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 50px;
-  padding-left: 400px;
+  padding-left: 140px;
+}
 
+.login h2 {
+  color: #f9f9fa;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
 }
 
 
@@ -439,9 +447,19 @@ span {
 
 .pesquisaDDD {
   display: none;
+  background-color: #657176;
+  text-align: center;
+
+  padding-top: 20px;
 }
+
+.pesquisaDDD input {
+  border-radius: 10px;
+  width: 260px;
+  height: 20px;
+}
+
 
 .pesquisaDDD.show {
   display: block;
-  background-color: green;
 }
