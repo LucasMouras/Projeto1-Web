@@ -97,7 +97,7 @@
   <div class="pesquisaDDD">
     <input type="text" class="ddd" placeholder="Insira um DDD">
     <input id="BuscarDDD" type="submit" onclick="usaApiDDD()">
-    <button onclick="deslogar()">Deslogar</button>
+    <button id="btnDeslogar" onclick="deslogar()">Deslogar</button>
   </div>
 
   <ul class="lista">
@@ -117,19 +117,22 @@
 
         login.className = 'loginOff'
         ddd.className = 'pesquisaDDD show'
+
+
+
       }
     }
 
 
     function deslogar() {
-      console.log('Teste')
+
       document.cookie = `usuario=`
       var login = document.querySelector('.login')
       var ddd = document.querySelector('.pesquisaDDD')
       ddd.className = 'pesquisaDDD'
-      login.className = 'login'
-      var lista = document.querySelector('.lista')
-      lista.innerHTML = ""
+      login.className = 'loginOn'
+      document.querySelector('.lista').innerHTML("")
+
 
     }
 
@@ -193,6 +196,7 @@
             var li = document.createElement('li')
             li.innerHTML = cidades[i]
             lista.appendChild(li)
+
           }
 
         }
