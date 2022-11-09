@@ -109,8 +109,8 @@
 
     window.onload = function () {
 
-      var UsuarioLogado = document.cookie.split('=')[1]
-      if (!(UsuarioLogado === "")) {
+      var logado = document.cookie.split('=')[1]
+      if (!(logado === "" || document.cookie === "s")) {
 
         var login = document.querySelector('.login')
         var ddd = document.querySelector('.pesquisaDDD')
@@ -137,21 +137,35 @@
     }
 
     function logar() {
-      var email = document.querySelector('.email').value
-      var senha =  document.querySelector('.senha').value
-      const data = {user: `${email}`, pass:`${senha}`};
 
-      fetch("https://reqres.in/api/register",{
+      var login = document.querySelector('.login')
+      var ddd = document.querySelector('.pesquisaDDD')
+
+      const data = {
+        email: document.querySelector('.email').value,
+        password: document.querySelector('.senha').value
+      }
+
+
+
+      fetch("https://reqres.in/api/login", {
         method: "POST",
-        headers:{
+        headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
       })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-       });
+        .then(response => {
+          response.json()
+            .then(json => {
+              if (response.status === 200) {
+                login.className = 'loginOff'
+                ddd.className = 'pesquisaDDD show'
+
+                document.cookie = `Token=${json.token}`
+              }
+            })
+        })
     }
 
 
