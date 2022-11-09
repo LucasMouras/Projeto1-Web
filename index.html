@@ -88,7 +88,7 @@
     <input class="email" type="text" placeholder="usuario">
     <br>
     <br>
-    <input type="password" placeholder="senha">
+    <input class="senha" type="password" placeholder="senha">
     <br>
     <br>
     <input id="logar" type="submit" onclick="logar()">
@@ -137,46 +137,21 @@
     }
 
     function logar() {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://reqres.in/api/users", true);
-      xhr.onload = function () {
+      var email = document.querySelector('.email').value
+      var senha =  document.querySelector('.senha').value
+      const data = {user: `${email}`, pass:`${senha}`};
 
-        var login = document.querySelector('.login')
-        var ddd = document.querySelector('.pesquisaDDD')
-        var emails = []
-        var email = document.querySelector('.email')
-        var i = 0
-        var users = JSON.parse(xhr.responseText)
-        users = users.data
-
-        for (i = 0; i <= users.length - 1; i++) {
-          emails.push(users[i].email)
-        }
-
-        var cadastrado = false
-
-        for (i in emails) {
-          if (emails[i] === email.value) {
-            cadastrado = true
-            login.className = 'loginOff'
-            ddd.className = 'pesquisaDDD show'
-
-            document.cookie = `usuario=${email}`
-
-            break
-          }
-        }
-
-        if (cadastrado === false) {
-          var mensagem = document.createElement('h2')
-          mensagem.innerHTML = 'Usuário não encontrado'
-          login.appendChild(mensagem)
-        }
-
-
-      }
-
-      xhr.send();
+      fetch("https://reqres.in/api/register",{
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+       });
     }
 
 
