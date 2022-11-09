@@ -109,8 +109,8 @@
 
     window.onload = function () {
 
-      var logado = document.cookie.split('=')[1]
-      if (!(logado === "" || document.cookie === "s")) {
+      var logado = document.cookie.split('Token=')[1]
+      if (!(logado === "" || document.cookie === "")) {
 
         var login = document.querySelector('.login')
         var ddd = document.querySelector('.pesquisaDDD')
@@ -126,12 +126,9 @@
 
     function deslogar() {
 
-      document.cookie = `usuario=`
-      var login = document.querySelector('.login')
-      var ddd = document.querySelector('.pesquisaDDD')
-      ddd.className = 'pesquisaDDD'
-      login.className = 'loginOn'
-      document.querySelector('.lista').innerHTML("")
+      document.cookie = `Token=`
+      
+      location.reload(true)
 
 
     }
