@@ -132,58 +132,55 @@
 
 
     }
-
     function logar() {
 
-      var login = document.querySelector('.login')
-      var ddd = document.querySelector('.pesquisaDDD')
-      
-     
-      
-      const data = {
-        email: document.querySelector('.email').value,
-        password: document.querySelector('.senha').value
-      }
-      
-      console.log(Object.values(data)[1].length)
+var login = document.querySelector('.login')
+var ddd = document.querySelector('.pesquisaDDD')
 
-      if (Object.values(data)[0].length >= 3 && Object.values(data)[1].length >= 3) {
-        fetch("https://reqres.in/api/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data)
+
+
+const data = {
+    email: document.querySelector('.email').value,
+    password: document.querySelector('.senha').value
+}
+
+console.log(Object.values(data)[1].length)
+
+if (Object.values(data)[0].length >= 3 && Object.values(data)[1].length >= 3) {
+    fetch("https://reqres.in/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
         })
-          .then(response => {
+        .then(response => {
             response.json()
-              .then(json => {
-                if (response.status === 200) {
-                  login.className = 'loginOff'
-                  ddd.className = 'pesquisaDDD show'
+                .then(json => {
+                    if (response.status === 200) {
+                        login.className = 'loginOff'
+                        ddd.className = 'pesquisaDDD show'
 
-                  document.cookie = `Token=${json.token}`
-                } else {
-                  var h2 = document.createElement('h2')
-                  h2.innerHTML = 'Usuario não encontrado'
-                  h2.style.color = 'red'
-                  var log = document.querySelector('.login')
-                  log.appendChild(h2)
-                }
-              })
-          })
-      } else {
-        var h2 = document.createElement('h2')
-        h2.innerHTML = 'Os campos não atendem a especificação'
-        h2.style.color = 'red'
-        var log = document.querySelector('.login')
-        log.appendChild(h2)
-      }
-    }
-
+                        document.cookie = `Token=${json.token}`
+                    } else {
+                        var h2 = document.createElement('h2')
+                        h2.innerHTML = 'Usuario não encontrado'
+                        h2.style.color = 'red'
+                        var log = document.querySelector('.login')
+                        log.appendChild(h2)
+                    }
+                })
+        })
+} else {
+    var h2 = document.createElement('h2')
+    h2.innerHTML = 'Os campos não atendem a especificação'
+    h2.style.color = 'red'
+    var log = document.querySelector('.login')
+    log.appendChild(h2)
+}
+}
 
     function usaApiDDD() {
-      console.log('Res')
       var request = new XMLHttpRequest()
       var lista = document.querySelector('.lista')
       lista.innerHTML = ""
