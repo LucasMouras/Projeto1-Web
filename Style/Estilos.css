@@ -410,9 +410,10 @@ span {
 
 
 .login button {
-
-  width: 158px;
   border-radius: 10px;
+  width: 400px;
+  height: 30px;
+  background-color: aquamarine;
 }
 
 .login input {
