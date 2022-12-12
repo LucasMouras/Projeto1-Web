@@ -1,74 +1,58 @@
-const pg = require('pg')
-
-const client = new pg.Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'SiteWeb',
-  password: '1234',
-  port: 5432,
-})
-
-function registrar(usuario, senha) {
-  bd.query(`Insert into users values('${usuario}','${senha}')`)
-}
-
-module.exports = client
-const login = require('./login')
+const e = require('express')
+const { isBuffer } = require('util')
 
 
-window.onload = function () {
+let http = require('http'),
+  path = require('path'),
+  express = require('express'),
+  app = express()
 
-  var logado = document.cookie.split('Token=')[1]
-  if (!(logado === "" || document.cookie === "")) {
+let User = require('./model/usuario')
 
-    var login = document.querySelector('.login')
-    var ddd = document.querySelector('.pesquisaDDD')
+app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname, 'view'))
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.urlencoded({ extended: false }))
 
-    login.className = 'loginOff'
-    ddd.className = 'pesquisaDDD show'
+app.get('/', (re, res) => {
+  res.render('inicio')
 
-  }
-}
-
-
-document.querySelector('.btnregistrar').addEventListener('click', () => {
-  var user = document.querySelector('.email').value
-  var senha = document.querySelector('.senha').value
-  registrar(user, senha)
-  console.log('Deu bom')
 })
 
 
-function deslogar() {
-
-  document.cookie = `Token=`
-
-  location.reload(true)
+app.get('/cadastro', (req, res) => {
+  res.render('cadastro')
+})
 
 
-}
+app.get('/logar', (req, res) => {
+  res.render('logar')
+})
 
+app.post('/cad', async (req, res) => {
+  let login = req.body.login
+  var senha = req.body.senha
+  console.log(login, senha)
 
+  await User.insert(login, senha)
+  res.send('OK')
+})
 
-function usaApiDDD() {
-  var request = new XMLHttpRequest()
-  var lista = document.querySelector('.lista')
-  lista.innerHTML = ""
-  request.open("GET", `https://brasilapi.com.br/api/ddd/v1/${document.querySelector('.ddd').value}`, true);
-  request.onreadystatechange = () => {
-    if (request.readyState === 4 && request.status === 200) {
-      var cidadesOBJ = JSON.parse(request.responseText)
-      cidadesOBJ = cidadesOBJ.cities
-      var cidades = Object.values(cidadesOBJ)
+app.post('/logar', async (req, res) => {
+  let login = req.body.login
+  var senha = req.body.senha
+  let result = await User.existeNoBanco(login, senha)
 
-      for (i in cidades) {
-        var li = document.createElement('li')
-        li.innerHTML = cidades[i]
-        lista.appendChild(li)
-
-      }
-
-    }
+  if (result > 0) {
+    res.redirect('/logado')
+  } else {
+    res.redirect('/cadastro')
+    res.send('Usuario n encontrado')
   }
-  request.send()
-}
+})
+
+
+
+
+
+app.listen(3000)
