@@ -29,6 +29,10 @@ app.get('/logar', (req, res) => {
   res.render('logar')
 })
 
+app.get('/logado', (req, res) => {
+  res.render('/logado')
+})
+
 app.post('/cad', async (req, res) => {
   let login = req.body.login
   var senha = req.body.senha
