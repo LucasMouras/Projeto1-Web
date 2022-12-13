@@ -30,7 +30,7 @@ app.get('/logar', (req, res) => {
 })
 
 app.get('/logado', (req, res) => {
-  res.render('/logado')
+  res.render('logado')
 })
 
 app.post('/cad', async (req, res) => {
@@ -39,7 +39,7 @@ app.post('/cad', async (req, res) => {
   console.log(login, senha)
 
   await User.insert(login, senha)
-  res.send('OK')
+  res.redirect('/logar')
 })
 
 app.post('/logar', async (req, res) => {
@@ -51,7 +51,7 @@ app.post('/logar', async (req, res) => {
     res.redirect('/logado')
   } else {
     res.redirect('/cadastro')
-    res.send('Usuario n encontrado')
+
   }
 })
 
